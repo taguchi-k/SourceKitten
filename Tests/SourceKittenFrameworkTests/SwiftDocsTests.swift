@@ -102,7 +102,7 @@ private func diff(original: String, modified: String) -> String {
         try original.data(using: .utf8)?.write(to: url.appendingPathComponent("original.json"))
         try modified.data(using: .utf8)?.write(to: url.appendingPathComponent("modified.json"))
 
-        let task = Process()
+        let task = Foundation.Process()
         let pathToEnv = "/usr/bin/env"
         task.arguments = ["git", "diff", "original.json", "modified.json"]
 

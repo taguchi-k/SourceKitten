@@ -73,7 +73,7 @@ private func env(_ name: String) -> String? {
 
 /// Run a process at the given (absolute) path, capture output, return outupt.
 private func runCommand(_ path: String, _ args: String...) -> String? {
-    let process = Process()
+    let process = Foundation.Process()
     process.arguments = args
 
     let pipe = Pipe()
@@ -178,7 +178,7 @@ private let xcrunFindPath: String? = {
         return nil
     }
 
-    let task = Process()
+    let task = Foundation.Process()
     task.arguments = ["-find", "swift"]
 
     let pipe = Pipe()

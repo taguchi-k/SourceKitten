@@ -50,7 +50,7 @@ internal enum XcodeBuild {
      - returns: `xcodebuild`'s STDOUT output and, optionally, both STDERR+STDOUT output combined.
      */
     internal static func launch(arguments: [String], inPath path: String, pipingStandardError: Bool = true) -> Data {
-        let task = Process()
+        let task = Foundation.Process()
         let pathOfXcodebuild = "/usr/bin/xcodebuild"
         task.arguments = arguments
 
@@ -233,7 +233,7 @@ public func sdkPath() -> String {
     // xcrun does not exist on Linux
     return ""
 #else
-    let task = Process()
+let task = Foundation.Process()
     let pathOfXcrun = "/usr/bin/xcrun"
     task.arguments = ["--show-sdk-path", "--sdk", "macosx"]
 

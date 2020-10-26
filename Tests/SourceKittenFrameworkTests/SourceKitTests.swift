@@ -11,7 +11,7 @@ import Foundation
 import XCTest
 
 private func run(executable: String, arguments: [String]) -> String? {
-    let task = Process()
+    let task = Foundation.Process()
     task.arguments = arguments
 
     let pipe = Pipe()

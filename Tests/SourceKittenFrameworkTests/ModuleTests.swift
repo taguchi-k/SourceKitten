@@ -46,7 +46,7 @@ let commandantPathForSPM: String? = {
         var dependencies: [Package]
     }
 
-    let task = Process()
+    let task = Foundation.Process()
     let path = "/usr/bin/env"
     task.arguments = ["swift", "package", "show-dependencies", "--format", "json"]
 
